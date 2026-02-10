@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Main Page</h3>
+
+<button onclick="load('page1.html')">Page 1</button>
+<button onclick="load('page2.html')">Page 2</button>
+
+<div id="box"></div>
+
+<script>
+function load(file){
+  fetch(file)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("box").innerHTML = html;
+    });
+}
+</script>
+
+</body>
+</html>
